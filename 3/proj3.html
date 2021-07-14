@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Etch a sketch</title>
+    <link rel = "stylesheet" type= text/css href='p3.css'>
+  </head>
+  <body>
+      <div id ="grid">
+      </div>
+         <button>Clear Grid</button>
+    <script>
+     
+     //divs.setAttribute('')
+
+       for (i = 0; i < 256; i++) {
+        let divs = document.createElement("div"); 
+      //  divs.id="blocks";
+        document.getElementById('grid').appendChild(divs);
+        //console.log(divs);
+       }
+    // sketching
+    function sketch () {
+      const hover = document.querySelectorAll("div");
+    hover.forEach((div) => {
+          div.addEventListener('mouseover',(e)=> e.target.style.backgroundColor = "black")
+    });
+    } 
+    sketch();
+
+    // clear grid
+     function clear_grid () {
+       let cl = document.getElementById('grid');
+       cl.innerHTML=''
+         
+     }
+    
+      const btno = document.querySelector('button');
+        btno.addEventListener('click',(e)=>clear_grid())
+
+
+    </script>
+     
+
+  </body>
+</html>
